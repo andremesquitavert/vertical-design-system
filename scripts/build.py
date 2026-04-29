@@ -33,6 +33,7 @@ ORDER = [
     COMPONENTS / "timeline.css",
     COMPONENTS / "pa-card.css",
     COMPONENTS / "toast.css",
+    COMPONENTS / "kanban.css",
     COMPONENTS / "utilities.css",
     COMPONENTS / "terminal.css",
     COMPONENTS / "schedule-card.css",
