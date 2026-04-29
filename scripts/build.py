@@ -26,6 +26,7 @@ ORDER = [
     COMPONENTS / "kpi.css",
     COMPONENTS / "table.css",
     COMPONENTS / "badge.css",
+    COMPONENTS / "status-badge.css",
     COMPONENTS / "button.css",
     COMPONENTS / "alert.css",
     COMPONENTS / "form.css",

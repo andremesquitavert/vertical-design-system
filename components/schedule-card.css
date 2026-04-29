@@ -24,7 +24,7 @@
 .sched-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
 .sched-filter-bar { padding-bottom: 12px; }
-.sched-filter-bar .form-select { max-width: 280px; }
+.sched-filter-bar .vds-field { max-width: 280px; }
 
 .sched-list { display: flex; flex-direction: column; gap: 10px; }
 

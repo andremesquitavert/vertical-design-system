@@ -4,7 +4,7 @@
  *  Grupo Vertical Saúde · Governança de TI
  * ============================================================
  *  Gerado por: scripts/build.py
- *  Data:       2026-04-29 10:40
+ *  Data:       2026-04-29 11:10
  *
  *  NÃO edite este arquivo diretamente.
  *  Edite os arquivos em tokens/ ou components/ e rode o build.
@@ -718,6 +718,45 @@ html, body {
 .vds-badge--neutral { background: var(--surface-muted); color: var(--t2); }
 
 
+/* ── Status badge (indicador de execução de robô) ── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all var(--t) var(--ease);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-badge.running {
+  background: var(--success-dim);
+  color: var(--success);
+  border-color: rgba(16,185,129,.25);
+}
+
+.status-badge.running .badge-dot {
+  animation: blink 2.2s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--success-glow);
+}
+
+.status-badge.stopped {
+  background: var(--surface2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+
 /* ── Botões ──────────────────────────────────────────────────── */
 
 .vds-btn {
@@ -762,6 +801,29 @@ html, body {
 .vds-btn--sm    { padding: 5px 10px; font-size: 12px; }
 .vds-btn--lg    { padding: 10px 20px; font-size: 14px; }
 .vds-btn--block { width: 100%; justify-content: center; }
+
+/* Ícone (quadrado, sem texto) */
+.vds-btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--t3);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background .15s, color .15s;
+  padding: 0;
+  font-family: inherit;
+  flex-shrink: 0;
+}
+
+.vds-btn--icon:hover:not(:disabled) {
+  background: var(--bg);
+  color: var(--t1);
+}
 
 
 /* ── Alertas / Feedback ─────────────────────────────────────── */
@@ -1333,7 +1395,7 @@ select.vds-field   { cursor: pointer; }
 .sched-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
 
 .sched-filter-bar { padding-bottom: 12px; }
-.sched-filter-bar .form-select { max-width: 280px; }
+.sched-filter-bar .vds-field { max-width: 280px; }
 
 .sched-list { display: flex; flex-direction: column; gap: 10px; }
 
