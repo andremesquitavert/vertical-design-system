@@ -4,7 +4,7 @@
  *  Grupo Vertical Saúde · Governança de TI
  * ============================================================
  *  Gerado por: scripts/build.py
- *  Data:       2026-04-29 09:59
+ *  Data:       2026-04-29 10:18
  *
  *  NÃO edite este arquivo diretamente.
  *  Edite os arquivos em tokens/ ou components/ e rode o build.
@@ -86,12 +86,93 @@
   --purple-light:  #faf5ff;
   --purple-border: #ddd6fe;
 
+  /* ── Superfícies sutis (usar no lugar de cores hardcoded) ── */
+  --surface-subtle: #f9fafb;   /* thead, footer de drawer, desc-box */
+  --surface-muted:  #f3f4f6;   /* badges neutros, dots pendentes, count pills */
+  --surface-hover:  #f5f8ff;   /* hover de linhas de tabela */
+  --border-subtle:  #e5e7eb;   /* linhas de timeline pendentes */
+  --scrollbar-thumb: #d1d5db;  /* scrollbar */
+
   /* ── Sombras ── */
   --shadow-card:       0 4px 18px rgba(0, 0, 0, .07);
   --shadow-drawer:    -12px 0 60px rgba(0, 0, 0, .12);
   --shadow-toast:      0 8px 32px rgba(0, 0, 0, .18);
   --shadow-focus:      0 0 0 3px rgba(37, 99, 235, .1);
   --shadow-accent-dot: 0 2px 8px rgba(37, 99, 235, .4);
+}
+
+
+/*
+ * ============================================================
+ *  VERTICAL DESIGN SYSTEM — Dark Theme
+ * ============================================================
+ *  Ativa o tema escuro adicionando data-theme="dark" na tag
+ *  <html> ou em qualquer elemento ancestral:
+ *
+ *    document.documentElement.setAttribute('data-theme', 'dark')
+ *    localStorage.setItem('vds-theme', 'dark')
+ *
+ *  Para respeitar a preferência do sistema automaticamente:
+ *    @media (prefers-color-scheme: dark) { ... }  — veja CONTRIBUTING.md
+ * ============================================================
+ */
+
+[data-theme="dark"] {
+
+  /* ── Layout ── */
+  --sb:      #090b12;   /* sidebar — mais escura que o fundo */
+  --bg:      #0f1117;   /* page background */
+  --surface: #1a1d27;   /* cards, topbar, drawers */
+  --border:  #2d3146;   /* borders */
+
+  /* ── Superfícies sutis ── */
+  --surface-subtle: #1f2335;   /* thead, footer drawer, desc-box */
+  --surface-muted:  #252840;   /* badges neutros, dots pendentes */
+  --surface-hover:  #1e2238;   /* hover de linhas */
+  --border-subtle:  #2d3146;   /* linhas de timeline */
+  --scrollbar-thumb: #3a3f5c;
+
+  /* ── Tipografia ── */
+  --t1: #e2e8f0;   /* texto primário */
+  --t2: #94a3b8;   /* texto secundário */
+  --t3: #64748b;   /* texto terciário / placeholder */
+
+  /* ── Accent (azul mais vivo em fundo escuro) ── */
+  --accent:        #3b82f6;
+  --accent-dark:   #2563eb;
+  --accent-light:  #172554;
+  --accent-border: #1e3a8a;
+
+  /* ── Status ── */
+  --s-aberta-bg:     #2d1f00;  --s-aberta-fg:     #fbbf24;  --s-aberta-dot:     #f59e0b;
+  --s-aceita-bg:     #0d1f3c;  --s-aceita-fg:     #60a5fa;  --s-aceita-dot:     #3b82f6;
+  --s-aguardando-bg: #1e1040;  --s-aguardando-fg: #a78bfa;  --s-aguardando-dot: #8b5cf6;
+  --s-analise-bg:    #1a1650;  --s-analise-fg:    #818cf8;  --s-analise-dot:    #6366f1;
+  --s-concluida-bg:  #052e1c;  --s-concluida-fg:  #34d399;  --s-concluida-dot:  #10b981;
+  --s-reprovada-bg:  #2d0a0a;  --s-reprovada-fg:  #f87171;  --s-reprovada-dot:  #ef4444;
+
+  /* ── Prioridade ── */
+  --p-alta-bg:  #2d0a0a;  --p-alta-fg:  #f87171;
+  --p-media-bg: #2d1f00;  --p-media-fg: #fbbf24;
+  --p-baixa-bg: #052e1c;  --p-baixa-fg: #34d399;
+
+  /* ── Feedback semântico ── */
+  --info-bg:     #0d1f3c;  --info-fg:    #93c5fd;  --info-border:    #1e3a8a;
+  --warn-bg:     #2d1f00;  --warn-fg:    #fcd34d;  --warn-border:    #92400e;
+  --success-bg:  #052e1c;  --success-fg: #6ee7b7;  --success-border: #065f46;
+  --error-bg:    #2d0a0a;  --error-fg:   #fca5a5;  --error-border:   #991b1b;
+
+  /* ── Roxo ── */
+  --purple:        #a78bfa;
+  --purple-light:  #1e1040;
+  --purple-border: #4c1d95;
+
+  /* ── Sombras ── */
+  --shadow-card:       0 4px 18px rgba(0, 0, 0, .35);
+  --shadow-drawer:    -12px 0 60px rgba(0, 0, 0, .45);
+  --shadow-toast:      0 8px 32px rgba(0, 0, 0, .55);
+  --shadow-focus:      0 0 0 3px rgba(59, 130, 246, .2);
+  --shadow-accent-dot: 0 2px 8px rgba(59, 130, 246, .5);
 }
 
 
@@ -504,7 +585,7 @@ html, body {
 }
 
 .vds-table-card__count {
-  background: #f3f4f6;
+  background: var(--surface-muted);
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 11.5px;
@@ -555,7 +636,7 @@ html, body {
   color: var(--t2);
   text-transform: uppercase;
   letter-spacing: .06em;
-  background: #f9fafb;
+  background: var(--surface-subtle);
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
@@ -567,7 +648,7 @@ html, body {
 }
 
 .vds-table tbody tr:last-child { border-bottom: none; }
-.vds-table tbody tr:hover       { background: #f5f8ff; }
+.vds-table tbody tr:hover       { background: var(--surface-hover); }
 
 .vds-table tbody td {
   padding: 11px 16px;
@@ -634,7 +715,7 @@ html, body {
 .vds-badge--baixa { background: var(--p-baixa-bg); color: var(--p-baixa-fg); }
 
 /* Neutro (para tags genéricas) */
-.vds-badge--neutral { background: #f3f4f6; color: var(--t2); }
+.vds-badge--neutral { background: var(--surface-muted); color: var(--t2); }
 
 
 /* ── Botões ──────────────────────────────────────────────────── */
@@ -816,7 +897,7 @@ select.vds-field   { cursor: pointer; }
 .vds-drawer__footer {
   padding: 14px 22px;
   border-top: 1px solid var(--border);
-  background: #f9fafb;
+  background: var(--surface-subtle);
   display: flex;
   gap: 10px;
   flex-shrink: 0;
@@ -833,7 +914,7 @@ select.vds-field   { cursor: pointer; }
 }
 
 .vds-desc-box {
-  background: #f9fafb;
+  background: var(--surface-subtle);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 13px 14px;
@@ -895,7 +976,7 @@ select.vds-field   { cursor: pointer; }
 
 .vds-timeline__dot--done    { background: #10b981; border-color: #10b981; color: #fff; }
 .vds-timeline__dot--current { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 0 4px rgba(37, 99, 235, .2); }
-.vds-timeline__dot--pending { background: #f3f4f6; border-color: #d1d5db; color: #9ca3af; }
+.vds-timeline__dot--pending { background: var(--surface-muted); border-color: var(--border); color: var(--t3); }
 
 .vds-timeline__label {
   font-size: 10px;
@@ -914,7 +995,7 @@ select.vds-field   { cursor: pointer; }
 }
 
 .vds-timeline__line--done    { background: #10b981; }
-.vds-timeline__line--pending { background: #e5e7eb; }
+.vds-timeline__line--pending { background: var(--border-subtle); }
 
 
 /* ── Card de Plano de Ação ───────────────────────────────────── */
@@ -945,7 +1026,7 @@ select.vds-field   { cursor: pointer; }
 
 .vds-pa-card__body {
   font-size: 13.5px;
-  color: #374151;
+  color: var(--t1);
   line-height: 1.65;
   white-space: pre-line;
 }
@@ -1018,5 +1099,5 @@ select.vds-field   { cursor: pointer; }
 /* Scrollbar customizada */
 ::-webkit-scrollbar              { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track        { background: transparent; }
-::-webkit-scrollbar-thumb        { background: #d1d5db; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover  { background: #9ca3af; }
+::-webkit-scrollbar-thumb        { background: var(--scrollbar-thumb); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: var(--t3); }

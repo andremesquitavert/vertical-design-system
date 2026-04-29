@@ -4,6 +4,21 @@ Formato: `[versão] — YYYY-MM-DD — descrição`
 
 ---
 
+## [1.1.0] — 2026-04-29
+
+### Adicionado
+- Dark theme completo (`tokens/dark.css`) via seletor `[data-theme="dark"]`
+  — cobre todos os tokens: layout, tipografia, accent, status, prioridade, feedback, roxo e sombras
+- Tokens novos em `variables.css`: `--surface-subtle`, `--surface-muted`, `--surface-hover`, `--border-subtle`, `--scrollbar-thumb`
+
+### Modificado
+- Todos os valores hardcoded nos componentes substituídos pelos novos tokens
+  — `table` (thead, count pill, hover), `drawer` (footer, desc-box), `badge` (neutral),
+    `timeline` (dot pending, line pending), `pa-card` (body text), `utilities` (scrollbar)
+- `scripts/build.py` agora inclui `tokens/dark.css` no bundle
+
+---
+
 ## [1.0.0] — 2026-04-29
 
 ### Adicionado

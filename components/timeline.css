@@ -28,7 +28,7 @@
 
 .vds-timeline__dot--done    { background: #10b981; border-color: #10b981; color: #fff; }
 .vds-timeline__dot--current { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 0 4px rgba(37, 99, 235, .2); }
-.vds-timeline__dot--pending { background: #f3f4f6; border-color: #d1d5db; color: #9ca3af; }
+.vds-timeline__dot--pending { background: var(--surface-muted); border-color: var(--border); color: var(--t3); }
 
 .vds-timeline__label {
   font-size: 10px;
@@ -47,4 +47,4 @@
 }
 
 .vds-timeline__line--done    { background: #10b981; }
-.vds-timeline__line--pending { background: #e5e7eb; }
+.vds-timeline__line--pending { background: var(--border-subtle); }

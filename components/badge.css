@@ -36,4 +36,4 @@
 .vds-badge--baixa { background: var(--p-baixa-bg); color: var(--p-baixa-fg); }
 
 /* Neutro (para tags genéricas) */
-.vds-badge--neutral { background: #f3f4f6; color: var(--t2); }
+.vds-badge--neutral { background: var(--surface-muted); color: var(--t2); }

@@ -18,6 +18,7 @@ OUTPUT     = DIST / "vertical-design-system.css"
 # Ordem de importação — altere se adicionar novos componentes
 ORDER = [
     TOKENS     / "variables.css",
+    TOKENS     / "dark.css",
     COMPONENTS / "reset.css",
     COMPONENTS / "layout.css",
     COMPONENTS / "sidebar.css",
