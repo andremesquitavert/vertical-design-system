@@ -1,0 +1,44 @@
+/* ── Botões ──────────────────────────────────────────────────── */
+
+.vds-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s;
+  font-family: inherit;
+  white-space: nowrap;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.vds-btn:disabled { opacity: .55; cursor: not-allowed; }
+
+/* Variantes */
+.vds-btn--primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.vds-btn--primary:hover:not(:disabled) { background: var(--accent-dark); }
+
+.vds-btn--outline { background: transparent; border-color: var(--border); color: var(--t1); }
+.vds-btn--outline:hover:not(:disabled) { background: var(--bg); }
+
+.vds-btn--ghost { background: transparent; color: var(--t2); }
+.vds-btn--ghost:hover:not(:disabled) { background: var(--bg); color: var(--t1); }
+
+.vds-btn--danger { background: var(--error-bg); color: #dc2626; border-color: #fca5a5; }
+.vds-btn--danger:hover:not(:disabled) { background: #fee2e2; }
+
+.vds-btn--success { background: var(--success-bg); color: #059669; border-color: #6ee7b7; }
+.vds-btn--success:hover:not(:disabled) { background: #dcfce7; }
+
+.vds-btn--purple { background: var(--purple-light); color: var(--purple); border-color: var(--purple-border); }
+.vds-btn--purple:hover:not(:disabled) { background: #f3e8ff; }
+
+/* Tamanhos */
+.vds-btn--sm    { padding: 5px 10px; font-size: 12px; }
+.vds-btn--lg    { padding: 10px 20px; font-size: 14px; }
+.vds-btn--block { width: 100%; justify-content: center; }

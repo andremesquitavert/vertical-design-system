@@ -1,0 +1,19 @@
+/* ── Alertas / Feedback ─────────────────────────────────────── */
+
+.vds-alert {
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.5;
+  border: 1px solid;
+}
+
+.vds-alert i { margin-top: 1px; flex-shrink: 0; }
+
+.vds-alert--info    { background: var(--info-bg);    color: var(--info-fg);    border-color: var(--info-border);    }
+.vds-alert--warn    { background: var(--warn-bg);    color: var(--warn-fg);    border-color: var(--warn-border);    }
+.vds-alert--success { background: var(--success-bg); color: var(--success-fg); border-color: var(--success-border); }
+.vds-alert--error   { background: var(--error-bg);   color: var(--error-fg);   border-color: var(--error-border);   }

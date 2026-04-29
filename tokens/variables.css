@@ -1,0 +1,75 @@
+/*
+ * ============================================================
+ *  VERTICAL DESIGN SYSTEM — Design Tokens
+ *  Grupo Vertical Saúde · Governança de TI
+ * ============================================================
+ *  Arquivo: tokens/variables.css
+ *  Escopo:  variáveis CSS globais (:root)
+ *
+ *  Para customizar por projeto, sobrescreva os tokens no CSS
+ *  do módulo DEPOIS de importar o design system:
+ *
+ *    :root {
+ *      --accent: #10b981;  ← cor principal diferente
+ *    }
+ * ============================================================
+ */
+
+:root {
+
+  /* ── Estrutura de layout ── */
+  --sidebar-width:           248px;
+  --sidebar-width-collapsed: 64px;
+  --topbar-height:           56px;
+  --content-padding:         22px 24px;
+  --card-radius:             10px;
+  --sidebar-transition:      width 0.22s cubic-bezier(.4, 0, .2, 1);
+
+  /* ── Paleta base ── */
+  --sb:      #141416;   /* sidebar background */
+  --bg:      #f2f3f5;   /* page background */
+  --surface: #ffffff;   /* cards, topbar, drawers */
+  --border:  #e8eaed;   /* borders padrão */
+
+  /* ── Tipografia ── */
+  --t1: #111827;   /* texto primário */
+  --t2: #6b7280;   /* texto secundário */
+  --t3: #9ca3af;   /* texto terciário / placeholder */
+
+  /* ── Accent (azul principal) ── */
+  --accent:        #2563eb;
+  --accent-dark:   #1d4ed8;
+  --accent-light:  #eff6ff;
+  --accent-border: #bfdbfe;
+
+  /* ── Status genéricos (sobrescreva os nomes conforme o domínio do projeto) ── */
+  --s-aberta-bg:     #fffbeb;  --s-aberta-fg:     #b45309;  --s-aberta-dot:     #f59e0b;
+  --s-aceita-bg:     #eff6ff;  --s-aceita-fg:     #1d4ed8;  --s-aceita-dot:     #3b82f6;
+  --s-aguardando-bg: #faf5ff;  --s-aguardando-fg: #6d28d9;  --s-aguardando-dot: #8b5cf6;
+  --s-analise-bg:    #eef2ff;  --s-analise-fg:    #4338ca;  --s-analise-dot:    #6366f1;
+  --s-concluida-bg:  #f0fdf4;  --s-concluida-fg:  #059669;  --s-concluida-dot:  #10b981;
+  --s-reprovada-bg:  #fef2f2;  --s-reprovada-fg:  #dc2626;  --s-reprovada-dot:  #ef4444;
+
+  /* ── Prioridade ── */
+  --p-alta-bg:  #fef2f2;  --p-alta-fg:  #dc2626;
+  --p-media-bg: #fffbeb;  --p-media-fg: #b45309;
+  --p-baixa-bg: #f0fdf4;  --p-baixa-fg: #059669;
+
+  /* ── Feedback semântico ── */
+  --info-bg:     #eff6ff;  --info-fg:    #1e40af;  --info-border:    #bfdbfe;
+  --warn-bg:     #fffbeb;  --warn-fg:    #92400e;  --warn-border:    #fde68a;
+  --success-bg:  #f0fdf4;  --success-fg: #065f46;  --success-border: #a7f3d0;
+  --error-bg:    #fef2f2;  --error-fg:   #991b1b;  --error-border:   #fca5a5;
+
+  /* ── Roxo (ação secundária / plano de ação) ── */
+  --purple:        #6d28d9;
+  --purple-light:  #faf5ff;
+  --purple-border: #ddd6fe;
+
+  /* ── Sombras ── */
+  --shadow-card:       0 4px 18px rgba(0, 0, 0, .07);
+  --shadow-drawer:    -12px 0 60px rgba(0, 0, 0, .12);
+  --shadow-toast:      0 8px 32px rgba(0, 0, 0, .18);
+  --shadow-focus:      0 0 0 3px rgba(37, 99, 235, .1);
+  --shadow-accent-dot: 0 2px 8px rgba(37, 99, 235, .4);
+}

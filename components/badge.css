@@ -1,0 +1,39 @@
+/* ── Badges ─────────────────────────────────────────────────── */
+
+.vds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Dot decorativo */
+.vds-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .65;
+  flex-shrink: 0;
+}
+
+/* Status (nomes genéricos — renomeie via modificador no projeto) */
+.vds-badge--aberta     { background: var(--s-aberta-bg);     color: var(--s-aberta-fg);     }
+.vds-badge--aceita     { background: var(--s-aceita-bg);     color: var(--s-aceita-fg);     }
+.vds-badge--aguardando { background: var(--s-aguardando-bg); color: var(--s-aguardando-fg); }
+.vds-badge--analise    { background: var(--s-analise-bg);    color: var(--s-analise-fg);    }
+.vds-badge--concluida  { background: var(--s-concluida-bg);  color: var(--s-concluida-fg);  }
+.vds-badge--reprovada  { background: var(--s-reprovada-bg);  color: var(--s-reprovada-fg);  }
+
+/* Prioridade */
+.vds-badge--alta  { background: var(--p-alta-bg);  color: var(--p-alta-fg);  }
+.vds-badge--media { background: var(--p-media-bg); color: var(--p-media-fg); }
+.vds-badge--baixa { background: var(--p-baixa-bg); color: var(--p-baixa-fg); }
+
+/* Neutro (para tags genéricas) */
+.vds-badge--neutral { background: #f3f4f6; color: var(--t2); }

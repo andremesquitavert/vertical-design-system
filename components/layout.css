@@ -1,0 +1,27 @@
+/* ── Layout Global ──────────────────────────────────────────── */
+
+/* Container raiz: sidebar + main lado a lado */
+.vds-app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Área principal (direita da sidebar) */
+.vds-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Área de conteúdo — único elemento scrollável da página */
+.vds-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--content-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

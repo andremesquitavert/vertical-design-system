@@ -1,0 +1,41 @@
+/* ── Card de Plano de Ação ───────────────────────────────────── */
+/*
+ * Componente para exibir planos de ação ou notas estruturadas
+ * com destaque visual em roxo. Pode ser renomeado para vds-action-card
+ * se o domínio do projeto não usar "plano de ação".
+ */
+
+.vds-pa-card {
+  background: linear-gradient(135deg, var(--purple-light), #f3e8ff);
+  border: 1px solid var(--purple-border);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.vds-pa-card__label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vds-pa-card__body {
+  font-size: 13.5px;
+  color: #374151;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.vds-pa-card__meta {
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: #7c3aed;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

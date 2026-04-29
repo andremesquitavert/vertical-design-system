@@ -1,0 +1,117 @@
+/* ── Table Card ─────────────────────────────────────────────── */
+
+.vds-table-card {
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.vds-table-card__header {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.vds-table-card__title {
+  font-size: 13.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vds-table-card__count {
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  color: var(--t2);
+  font-weight: 600;
+}
+
+.vds-table-card__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Campo de busca */
+.vds-search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  width: 230px;
+  transition: border-color .15s, background .15s;
+}
+
+.vds-search:focus-within {
+  border-color: var(--accent-border);
+  background: var(--surface);
+}
+
+.vds-search i     { color: var(--t3); font-size: 12px; flex-shrink: 0; }
+.vds-search input { border: none; background: transparent; outline: none; font-size: 13px; color: var(--t1); width: 100%; font-family: inherit; }
+
+/* Tabela */
+.vds-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vds-table thead th {
+  padding: 9px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--t2);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  background: #f9fafb;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.vds-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .1s;
+}
+
+.vds-table tbody tr:last-child { border-bottom: none; }
+.vds-table tbody tr:hover       { background: #f5f8ff; }
+
+.vds-table tbody td {
+  padding: 11px 16px;
+  font-size: 13.5px;
+  vertical-align: middle;
+}
+
+/* Classes utilitárias para células */
+.vds-table .col-id      { font-family: monospace; font-size: 12px; color: var(--t3); font-weight: 600; }
+.vds-table .col-title   { font-weight: 600; }
+.vds-table .col-sub     { color: var(--t2); font-size: 13px; }
+.vds-table .col-date    { color: var(--t3); font-size: 12px; font-variant-numeric: tabular-nums; }
+.vds-table .col-chevron { width: 24px; color: var(--border); font-size: 11px; }
+
+/* Empty state */
+.vds-table__empty {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--t3);
+}
+
+.vds-table__empty i {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}

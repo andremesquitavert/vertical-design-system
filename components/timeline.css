@@ -1,0 +1,50 @@
+/* ── Timeline de Status ──────────────────────────────────────── */
+
+.vds-timeline {
+  display: flex;
+  align-items: flex-start;
+  padding: 6px 0;
+}
+
+.vds-timeline__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vds-timeline__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  border: 2px solid;
+  flex-shrink: 0;
+  transition: all .2s;
+}
+
+.vds-timeline__dot--done    { background: #10b981; border-color: #10b981; color: #fff; }
+.vds-timeline__dot--current { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 0 4px rgba(37, 99, 235, .2); }
+.vds-timeline__dot--pending { background: #f3f4f6; border-color: #d1d5db; color: #9ca3af; }
+
+.vds-timeline__label {
+  font-size: 10px;
+  color: var(--t2);
+  margin-top: 5px;
+  text-align: center;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vds-timeline__line {
+  flex: 1;
+  height: 2px;
+  margin-top: 14px;
+  transition: background .3s;
+}
+
+.vds-timeline__line--done    { background: #10b981; }
+.vds-timeline__line--pending { background: #e5e7eb; }

@@ -1,0 +1,28 @@
+/* ── Utilitários ────────────────────────────────────────────── */
+
+/* Animação de entrada */
+.vds-anim-in { animation: vds-slide-up .25s ease; }
+
+@keyframes vds-slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner de carregamento */
+.vds-spinner { display: inline-block; animation: vds-spin .7s linear infinite; }
+
+@keyframes vds-spin { to { transform: rotate(360deg); } }
+
+/* Texto */
+.vds-text-mono  { font-family: monospace; }
+.vds-text-sm    { font-size: 12px; }
+.vds-text-xs    { font-size: 11px; }
+.vds-text-muted { color: var(--t3); }
+.vds-text-sub   { color: var(--t2); }
+.vds-text-bold  { font-weight: 700; }
+
+/* Scrollbar customizada */
+::-webkit-scrollbar              { width: 5px; height: 5px; }
+::-webkit-scrollbar-track        { background: transparent; }
+::-webkit-scrollbar-thumb        { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover  { background: #9ca3af; }
