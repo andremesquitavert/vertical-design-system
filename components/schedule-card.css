@@ -1,0 +1,181 @@
+/* ── Schedule / Agent panel container ── */
+.sched-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.sched-panel.hidden { display: none !important; }
+
+.sched-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 2px;
+}
+
+.sched-body::-webkit-scrollbar { width: 4px; }
+.sched-body::-webkit-scrollbar-track { background: transparent; }
+.sched-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.sched-filter-bar { padding-bottom: 12px; }
+.sched-filter-bar .form-select { max-width: 280px; }
+
+.sched-list { display: flex; flex-direction: column; gap: 10px; }
+
+/* ── Schedule card ── */
+.sched-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r2);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color var(--t) var(--ease), background var(--t) var(--ease);
+}
+
+.sched-card:hover { background: var(--surface2); }
+
+.sched-card.disabled { opacity: .5; }
+
+.sched-card-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sched-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sched-flow-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sched-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.sched-card-recurrence {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.sched-card-time {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface3);
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.sched-card-next,
+.sched-card-last {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.sched-card-next strong { color: var(--accent); font-weight: 500; }
+.sched-card-last strong { color: var(--success); font-weight: 500; }
+
+.sched-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Toggle switch ── */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.toggle-track {
+  width: 32px;
+  height: 18px;
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  position: relative;
+  transition: background var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform var(--t) var(--ease), background var(--t) var(--ease);
+}
+
+.toggle-switch input:checked + .toggle-track {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.toggle-switch input:checked + .toggle-track .toggle-thumb {
+  background: var(--accent);
+  transform: translateX(14px);
+}
+
+/* ── Empty state ── */
+.sched-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sched-empty-state.hidden { display: none !important; }
+
+.sched-empty-icon { font-size: 48px; opacity: .25; }
+
+.sched-empty-state h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.sched-empty-state p {
+  font-size: 12px;
+  color: var(--text-dim);
+}

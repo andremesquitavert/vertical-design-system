@@ -1,0 +1,202 @@
+/* ── Panel section header — shared by terminal, screenshot and other panels ── */
+.panel-section-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+
+.hdr-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.autoscroll-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.autoscroll-label input {
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* ── Log tabs ── */
+.log-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.log-tab {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-dim);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--t) var(--ease), border-color var(--t) var(--ease);
+  margin-bottom: -1px;
+}
+
+.log-tab:hover { color: var(--text-muted); }
+
+.log-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+#log-terminal-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+#log-runs-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Log body ── */
+.log-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: #7c93b0;
+  background: #040810;
+}
+
+.log-body::-webkit-scrollbar { width: 4px; }
+.log-body::-webkit-scrollbar-track { background: transparent; }
+.log-body::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* ── Log lines ── */
+.log-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  padding: 1.5px 0;
+  min-height: 18px;
+  border-radius: 3px;
+}
+
+.log-line:hover { background: rgba(255,255,255,.03); }
+
+.ll-date {
+  color: #2c4a66;
+  flex-shrink: 0;
+  font-size: 10.5px;
+  padding-right: 2px;
+  cursor: default;
+  min-width: 8ch;
+}
+
+.ll-sep {
+  color: #1a3050;
+  padding: 0 5px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.ll-lvl {
+  font-weight: 700;
+  flex-shrink: 0;
+  min-width: 8ch;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+}
+
+.ll-info     .ll-lvl, .ll-lvl.ll-info     { color: #4ade80; }
+.ll-warning  .ll-lvl, .ll-lvl.ll-warning  { color: #fbbf24; }
+.ll-error    .ll-lvl, .ll-lvl.ll-error    { color: #f87171; }
+.ll-debug    .ll-lvl, .ll-lvl.ll-debug    { color: #60a5fa; }
+.ll-critical .ll-lvl, .ll-lvl.ll-critical { color: #e879f9; }
+.ll-success  .ll-lvl, .ll-lvl.ll-success  { color: #34d399; }
+
+.ll-src {
+  color: #2e6b8a;
+  font-size: 10px;
+  flex-shrink: 0;
+  max-width: 28ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+  transition: color var(--t);
+}
+.log-line:hover .ll-src { color: #4a9fc4; }
+
+.ll-msg {
+  color: #c0cfe0;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.ll-info    .ll-msg { color: #d4f1e0; }
+.ll-warning .ll-msg { color: #fef3c7; }
+.ll-error   .ll-msg { color: #fee2e2; }
+.ll-debug   .ll-msg { color: #bfdbfe; }
+
+.ll-dashboard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 4px;
+  border-left: 2px solid #0891b2;
+  margin: 2px 0;
+  background: rgba(8,145,178,.06);
+}
+.ll-dash-icon { color: #0891b2; font-size: 8px; flex-shrink: 0; }
+.ll-dash-msg  { color: #67e8f9; font-style: italic; flex: 1; }
+
+.ll-raw   { color: #3d566e; }
+.ll-error { color: #f87171; }
+.ll-warn  { color: #fbbf24; }
+
+.log-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 14px;
+  border-top: 1px solid var(--border);
+  font-size: 10.5px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  font-family: var(--mono);
+}
+
+.log-conn-status { color: var(--text-dim); }
+.log-conn-status.connected { color: var(--success); }

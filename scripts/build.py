@@ -34,6 +34,10 @@ ORDER = [
     COMPONENTS / "pa-card.css",
     COMPONENTS / "toast.css",
     COMPONENTS / "utilities.css",
+    COMPONENTS / "terminal.css",
+    COMPONENTS / "schedule-card.css",
+    COMPONENTS / "screenshot.css",
+    COMPONENTS / "run-card.css",
 ]
 
 HEADER = f"""\
